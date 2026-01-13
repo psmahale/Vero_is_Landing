@@ -654,157 +654,488 @@
             font-size: 0.875rem;
         }
 
-        /* Responsive */
-        /* Add these fixes */
-        @media (max-width: 768px) {
-            .cards-stack-container {
-                height: auto;
-                /* Remove fixed height */
-                margin: 0 1rem;
-            }
+       /* ============================================
+   MOBILE OPTIMIZATIONS - COMPLETELY REWRITTEN
+   ============================================ */
 
-            .feature-card {
-                position: relative !important;
-                /* Override absolute */
-                margin-bottom: 1rem;
-                transform: none !important;
-                opacity: 1 !important;
-            }
+/* Tablets (1024px and below) */
+@media (max-width: 1024px) {
+    .hero h1 {
+        font-size: 3.5rem;
+        letter-spacing: -2px;
+    }
+    
+    .section-header h2 {
+        font-size: 2.5rem;
+    }
+    
+    .developer-grid {
+        gap: 4rem;
+    }
+}
 
-            .developer-card-stack {
-                height: auto;
-            }
+/* Large Mobile / Small Tablet (768px and below) */
+@media (max-width: 768px) {
+    /* Navigation */
+    nav {
+        padding: 1rem 4%;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+    
+    .logo {
+        font-size: 1.25rem;
+    }
+    
+    /* Hero Section */
+    .hero {
+        min-height: auto;
+        padding: 6rem 4% 3rem;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+        letter-spacing: -1.5px;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.125rem;
+        margin-bottom: 2rem;
+    }
+    
+    .hero-badge {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero-cta {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+        margin-bottom: 2rem;
+    }
+    
+    .btn {
+        padding: 1rem 2rem;
+        font-size: 0.95rem;
+        width: 100%;
+        text-align: center;
+    }
+    
+    /* Video Section */
+    .video-section {
+        padding: 3rem 4%;
+    }
+    
+    .video-container {
+        border-radius: 12px;
+    }
+    
+    .video-overlay {
+        padding: 1.5rem;
+    }
+    
+    .video-overlay h3 {
+        font-size: 1.25rem;
+    }
+    
+    .video-overlay p {
+        font-size: 0.9rem;
+    }
+    
+    /* Features Section */
+    .features {
+        padding: 4rem 4%;
+    }
+    
+    .section-header {
+        margin-bottom: 3rem;
+    }
+    
+    .section-header h2 {
+        font-size: 2rem;
+        letter-spacing: -1px;
+    }
+    
+    .section-header p {
+        font-size: 1rem;
+    }
+    
+    /* Feature Cards - Stack to vertical */
+    .cards-stack-container {
+        height: auto;
+        min-height: 400px;
+        margin: 0 1rem;
+    }
+    
+    .feature-card {
+        position: relative !important;
+        margin-bottom: 1.5rem;
+        transform: none !important;
+        opacity: 1 !important;
+        padding: 2rem;
+    }
+    
+    .feature-card.hidden {
+        display: block;
+        pointer-events: all;
+    }
+    
+    .feature-number {
+        font-size: 2.5rem;
+    }
+    
+    .feature-content h3 {
+        font-size: 1.5rem;
+    }
+    
+    .feature-content p {
+        font-size: 0.95rem;
+    }
+    
+    .cards-navigation {
+        margin-top: 2rem;
+        gap: 0.75rem;
+    }
+    
+    .nav-btn {
+        padding: 0.875rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    
+    /* Stats Section */
+    .stats {
+        padding: 4rem 4%;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .stat-item {
+        padding: 1.5rem 1rem;
+    }
+    
+    .stat-number {
+        font-size: 2.5rem;
+    }
+    
+    .stat-label {
+        font-size: 0.9rem;
+    }
+    
+    /* Developer Section */
+    .developer {
+        padding: 4rem 4%;
+    }
+    
+    .developer-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .developer-visual {
+        order: 2;
+    }
+    
+    .developer-content {
+        order: 1;
+    }
+    
+    .developer-card-stack {
+        height: auto;
+        margin-bottom: 2rem;
+    }
+    
+    .dev-card {
+        position: relative !important;
+        margin-bottom: 1.5rem;
+        padding: 2rem;
+        transform: none !important;
+        opacity: 1 !important;
+    }
+    
+    .dev-card:nth-child(2),
+    .dev-card:nth-child(3) {
+        top: 0;
+        left: 0;
+    }
+    
+    .dev-profile {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .dev-avatar {
+        width: 70px;
+        height: 70px;
+        font-size: 1.75rem;
+    }
+    
+    .dev-info h4 {
+        font-size: 1.25rem;
+    }
+    
+    .dev-metrics {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .metric {
+        padding: 0.875rem;
+    }
+    
+    .metric-value {
+        font-size: 1.5rem;
+    }
+    
+    .developer-content h2 {
+        font-size: 2rem;
+    }
+    
+    .developer-content p {
+        font-size: 1rem;
+    }
+    
+    .tech-stack {
+        gap: 0.75rem;
+    }
+    
+    .tech-badge {
+        padding: 0.625rem 1.25rem;
+        font-size: 0.8rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+    }
+    
+    .cta-buttons .btn {
+        width: 100%;
+    }
+    
+    /* Footer */
+    footer {
+        padding: 3rem 4%;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    /* Dev Badge */
+    .dev-badge {
+        right: 0.75rem;
+        bottom: 0.75rem;
+        padding: 0.4rem 0.6rem;
+        font-size: 0.75rem;
+    }
+}
 
-            .dev-card {
-                position: relative !important;
-                margin-bottom: 2rem;
-            }
-        }
+/* Small Mobile (480px and below) */
+@media (max-width: 480px) {
+    /* Hero */
+    .hero {
+        padding: 5rem 3% 2rem;
+    }
+    
+    .hero h1 {
+        font-size: 1.875rem;
+        letter-spacing: -0.8px;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .btn {
+        padding: 0.875rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    
+    /* Video Section */
+    .video-section {
+        padding: 2.5rem 3%;
+    }
+    
+    .video-overlay {
+        padding: 1rem;
+    }
+    
+    .video-overlay h3 {
+        font-size: 1.125rem;
+    }
+    
+    .video-overlay p {
+        font-size: 0.85rem;
+    }
+    
+    /* Features */
+    .features {
+        padding: 3rem 3%;
+    }
+    
+    .section-header h2 {
+        font-size: 1.75rem;
+    }
+    
+    .section-header p {
+        font-size: 0.95rem;
+    }
+    
+    .cards-stack-container {
+        margin: 0 0.5rem;
+    }
+    
+    .feature-card {
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .feature-number {
+        font-size: 2rem;
+    }
+    
+    .feature-content h3 {
+        font-size: 1.25rem;
+    }
+    
+    .feature-content p {
+        font-size: 0.9rem;
+    }
+    
+    .nav-btn {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.85rem;
+    }
+    
+    /* Stats */
+    .stats {
+        padding: 3rem 3%;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .stat-item {
+        padding: 1.25rem 0.75rem;
+    }
+    
+    .stat-number {
+        font-size: 2.25rem;
+    }
+    
+    /* Developer */
+    .developer {
+        padding: 3rem 3%;
+    }
+    
+    .dev-card {
+        padding: 1.5rem;
+    }
+    
+    .dev-avatar {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .dev-info h4 {
+        font-size: 1.125rem;
+    }
+    
+    .dev-metrics {
+        gap: 0.75rem;
+    }
+    
+    .metric-value {
+        font-size: 1.25rem;
+    }
+    
+    .metric-label {
+        font-size: 0.8rem;
+    }
+    
+    .developer-content h2 {
+        font-size: 1.75rem;
+    }
+    
+    .developer-content p {
+        font-size: 0.95rem;
+    }
+    
+    .tech-badge {
+        padding: 0.5rem 1rem;
+        font-size: 0.75rem;
+    }
+    
+    /* Footer */
+    footer {
+        padding: 2.5rem 3%;
+    }
+    
+    .footer-grid {
+        gap: 2rem;
+    }
+    
+    .footer-brand h3 {
+        font-size: 1.25rem;
+    }
+    
+    .footer-brand p {
+        font-size: 0.9rem;
+    }
+    
+    .footer-section h4 {
+        font-size: 0.95rem;
+    }
+    
+    .footer-links a {
+        font-size: 0.9rem;
+    }
+}
 
-        /* Add to existing CSS */
-        .btn-black:hover,
-        .nav-cta:hover {
-            background: #00E5FF;
-            color: #0A0A0F;
-        }
-
-        .indicator.active {
-            background: #00E5FF;
-        }
-
-        .hero-badge {
-            background: #00E5FF;
-            color: #0A0A0F;
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-                letter-spacing: -1px;
-            }
-
-            .hero-subtitle {
-                font-size: 1.125rem;
-            }
-
-            .section-header h2 {
-                font-size: 2.5rem;
-            }
-
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
-            }
-
-            .cards-stack-container {
-                height: 550px;
-            }
-        }
-        /* Developer badge (non-intrusive) */
-        .dev-badge {
-            position: fixed;
-            right: 1rem;
-            bottom: 1rem;
-            background: rgba(0, 229, 255, 0.95);
-            color: #0A0A0F;
-            padding: 0.5rem 0.75rem;
-            border-radius: 8px;
-            font-weight: 700;
-            font-size: 0.875rem;
-            box-shadow: 0 8px 24px rgba(10, 10, 15, 0.08);
-            z-index: 2000;
-        }
-
-        @media (max-width: 480px) {
-            .developer-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .developer-visual {
-                order: -1;
-            }
-
-            .developer-card-stack {
-                height: auto;
-                margin-bottom: 1rem;
-            }
-
-            .dev-card {
-                padding: 1.5rem;
-            }
-        }
-        /* Additional mobile-focused tweaks */
-        @media (max-width: 600px) {
-            .hero h1 {
-                font-size: 2rem;
-                letter-spacing: -0.8px;
-            }
-
-            .hero-subtitle {
-                font-size: 1rem;
-                max-width: 90%;
-            }
-
-            .section-header h2 {
-                font-size: 1.8rem;
-            }
-
-            .video-section {
-                padding: 2.5rem 3%;
-            }
-
-            .video-overlay h3 { font-size: 1.125rem; }
-            .video-overlay p { font-size: 0.9rem; }
-
-            .cards-stack-container { height: auto; margin: 0 0.5rem; }
-
-            .feature-card { position: relative !important; transform: none !important; opacity: 1 !important; padding: 1.5rem; }
-
-            .nav-container { padding: 1rem 4%; }
-            .nav-cta { padding: 0.5rem 1rem; font-size: 0.9rem; }
-        }
-
-        @media (max-width: 420px) {
-            .hero h1 { font-size: 1.6rem; }
-            .hero-subtitle { font-size: 0.95rem; }
-            .feature-number { font-size: 2rem; }
-            .stat-number { font-size: 2.2rem; }
-            .developer-content h2 { font-size: 1.6rem; }
-        }
+/* Extra Small (360px and below) */
+@media (max-width: 360px) {
+    .hero h1 {
+        font-size: 1.625rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .section-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .feature-number {
+        font-size: 1.75rem;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    .developer-content h2 {
+        font-size: 1.5rem;
+    }
+}
     </style>
 </head>
 
