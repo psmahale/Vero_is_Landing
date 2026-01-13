@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>VERO AI Documentation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+      <a href="../vero.html" class="logo">VERO</a>
+      <ul class="nav-links">
+        <li><a href="../vero.html">Home</a></li>
+        <li><a href="#api">API</a></li>
+        <li><a href="#examples">Examples</a></li>
+        <li><a href="mailto:pranav.pbas@edu.in" class="nav-cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="mobile-nav">
+    <select aria-label="Documentation navigation"></select>
+  </div>
+
+  <div class="docs-container">
+    <aside class="docs-sidebar">
+      <div class="docs-nav">
+        <h3>Documentation</h3>
+        <ul>
+          <li><a href="index.html" class="active">Introduction</a></li>
+          <li><a href="getting-started.html">Getting Started</a></li>
+          <li><a href="api-reference.html">API Reference</a></li>
+          <li><a href="security.html">Security Features</a></li>
+          <li><a href="examples.html">Examples</a></li>
+          <li><a href="api-playground.html">API Playground</a></li>
+          <li><a href="whitepaper.html">Whitepaper</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="docs-content">
+      <h1>VERO AI Documentation</h1>
+
+      <div class="docs-card">
+        <h2>Welcome to VERO AI</h2>
+        <p>VERO AI is an advanced forensic validation system designed to close the "analog hole" in academic document verification. Our system uses multi-layer AI analysis to detect document fraud with 99.7% accuracy.</p>
+      </div>
+
+      <div class="docs-card">
+        <h2>Quick Start</h2>
+        <p>Test VERO AI with our free trial:</p>
+        <div class="code-block"># Install the VERO client
+pip install vero-ai
+
+# Initialize with your API key
+from vero import VeroClient
+client = VeroClient(api_key="your_api_key")
+
+# Verify a document
+result = client.verify_document(
+    file_path="certificate.jpg",
+    user_email="faculty@edu.in"
+)
+        </div>
+      </div>
+
+      <div class="docs-card">
+        <h2>API Status</h2>
+        <p><strong>Status:</strong> <span style="color: green; font-weight: bold;">● Live</span></p>
+        <p><strong>Response Time:</strong> Average 3.2s</p>
+        <p><strong>Uptime:</strong> 99.9% over 30 days</p>
+      </div>
+    </main>
+  </div>
+
+  <footer style="max-width:1200px;margin:2rem auto;padding:1rem;text-align:center;color:#6B7280;">
+    <div>© 2025 VERO AI • <a href="../vero.html">Return to landing page</a></div>
+  </footer>
+  <script>
+  (function(){
+    const nav = document.querySelector('.docs-nav');
+    const sel = document.querySelector('.mobile-nav select');
+    if(!nav || !sel) return;
+    nav.querySelectorAll('a').forEach(a=>{
+      const opt = document.createElement('option');
+      opt.value = a.getAttribute('href');
+      opt.textContent = a.textContent.trim();
+      if(a.classList.contains('active')) opt.selected = true;
+      sel.appendChild(opt);
+    });
+    sel.addEventListener('change', e=>{ if(e.target.value) window.location.href = e.target.value; });
+  })();
+  </script>
+</body>
+</html>

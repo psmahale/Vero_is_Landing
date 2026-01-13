@@ -1,0 +1,71 @@
+[build]
+  publish = "."
+  functions = "./functions"
+
+# Redirect root to vero.html
+[[redirects]]
+  from = "/"
+  to = "/vero.html"
+  status = 200
+
+# Make sure docs folder assets are accessible
+[[redirects]]
+  from = "/docs/*"
+  to = "/docs/:splat"
+  status = 200
+
+# Make video file accessible
+[[redirects]]
+  from = "/vero.mp4"
+  to = "/vero.mp4"
+  status = 200
+
+# For direct access to docs folder
+[[redirects]]
+  from = "/docs"
+  to = "/vero.html"
+  status = 301
+
+# Handle 404s
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
+
+# CACHE HEADERS for optimal performance
+[[headers]]
+  for = "/docs/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+    Content-Type = "text/css"
+
+[[headers]]
+  for = "/docs/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+    Content-Type = "application/javascript"
+
+[[headers]]
+  for = "/docs/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+# VIDEO FILE HEADERS - IMPORTANT!
+[[headers]]
+  for = "/vero.mp4"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+    Content-Type = "video/mp4"
+    Accept-Ranges = "bytes"
+
+# For other assets in root if needed
+[[headers]]
+  for = "/*.ico"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "/*.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+    Content-Type = "image/svg+xml"
